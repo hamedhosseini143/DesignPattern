@@ -13,7 +13,7 @@ class CreditCard implements PaymentProviderInterface
      */
     public function processPayment(Order $order ): bool
     {
-        echo "Processing payment with Credit Card\n";
+        echo "Processing payment with Credit Card for order: " . $order->getTotalPrice() . "\n";
         return true;
     }
 }
