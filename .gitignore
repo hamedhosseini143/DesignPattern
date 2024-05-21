@@ -33,3 +33,5 @@ Thumbs.db
 /.env
 composer.lock
 .vscode
+
+/vendor/

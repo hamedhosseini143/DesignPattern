@@ -1,0 +1,15 @@
+{
+    "name": "drupaldev143/firstpackage",
+    "autoload": {
+        "psr-4": {
+            "src\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "drupaldev143",
+            "email": "hamedhosseini0143@gmail.com"
+        }
+    ],
+    "require": {}
+}
