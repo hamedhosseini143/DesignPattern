@@ -8,6 +8,9 @@ use app\src\DesignPattern\Creational\FactoryMethod\PaymentMethod\Provider\Paymen
 class PayPalFactory extends PaymentMethodFactory
 {
 
+    /**
+     * @return PaymentProviderInterface
+     */
     public function createPaymentProvider(): PaymentProviderInterface
     {
         return new PayPal();

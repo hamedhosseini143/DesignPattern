@@ -8,10 +8,11 @@ class CreditCard implements PaymentProviderInterface
 {
     /**
      * @inheritDoc
+     * @return bool
      */
     public function processPayment(): bool
     {
-        echo 'از طریق کردیت کارت پول بده';
+        echo 'Pay with credit card';
         return true;
     }
 }

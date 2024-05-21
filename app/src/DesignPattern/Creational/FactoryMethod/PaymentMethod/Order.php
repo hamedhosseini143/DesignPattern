@@ -2,9 +2,18 @@
 
 namespace app\src\DesignPattern\Creational\FactoryMethod\PaymentMethod;
 
+/**
+ *
+ */
 class Order
 {
+    /**
+     * @var int
+     */
     private int $totalPrice;
+    /**
+     * @var bool
+     */
     private bool $status;
 
     /**
@@ -17,11 +26,17 @@ class Order
         $this->status = $status;
     }
 
+    /**
+     * @return int
+     */
     public function getTotalPrice(): int
     {
         return $this->totalPrice;
     }
 
+    /**
+     * @return bool
+     */
     public function isStatus(): bool
     {
         return $this->status;

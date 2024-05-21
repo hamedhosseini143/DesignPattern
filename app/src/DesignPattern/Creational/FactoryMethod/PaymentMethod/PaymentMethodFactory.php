@@ -16,7 +16,7 @@ abstract class PaymentMethodFactory implements PaymentMethodFactoryInterface
     }
 
     /**
-     * متد پیمنت را ایجاد کرده و تحویل میدهد
+     * Creates the payment method
      * @return PaymentProviderInterface
      */
     abstract protected function createPaymentProvider(): PaymentProviderInterface;

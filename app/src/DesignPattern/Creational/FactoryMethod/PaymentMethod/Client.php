@@ -8,30 +8,38 @@ use InvalidArgumentException;
 
 class Client
 {
+    /**
+     * @var string
+     */
     private string $paymentMethod;
 
+    /**
+     * @param string $paymentMethod
+     */
     public function __construct(string $paymentMethod)
     {
         $this->paymentMethod = $paymentMethod;
     }
 
+    /**
+     * @param $checkPayment
+     * @return bool
+     */
     public function processPayment($checkPayment): bool
     {
         return $this->getPaymentMethod()->processPayment();
     }
 
     /**
-     * آبجکتی طبق PaymentMethodFactoryInterface تحویل میدهد
+     *  return an object of the PaymentMethodFactoryInterface
      * @return PaymentMethodFactoryInterface
      */
     private function getPaymentMethod(): PaymentMethodFactoryInterface
     {
-        if ($this->paymentMethod === 'paypal') {
-            return new  PayPalFactory();
-        } elseif ($this->paymentMethod === 'credit_card') {
-            return new CreditCardFactory();
-        } else {
-            throw new InvalidArgumentException('Payment method not supported');
-        }
+        return match ($this->paymentMethod) {
+            'paypal' => new PayPalFactory(),
+            'credit_card' => new CreditCardFactory(),
+            default => throw new InvalidArgumentException('Payment method not supported'),
+        };
     }
 }

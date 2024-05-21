@@ -5,7 +5,7 @@ namespace app\src\DesignPattern\Creational\FactoryMethod\PaymentMethod\Provider;
 interface PaymentProviderInterface
 {
     /**
-     * پرداخت را انجام میدهد
+     *  makes the payment
      * @return bool
      */
     public function processPayment(): bool;

@@ -7,6 +7,9 @@ use app\src\DesignPattern\Creational\FactoryMethod\PaymentMethod\Provider\Paymen
 
 class CreditCardFactory extends PaymentMethodFactory
 {
+    /**
+     * @return PaymentProviderInterface
+     */
     public function createPaymentProvider(): PaymentProviderInterface
     {
         return new CreditCard();

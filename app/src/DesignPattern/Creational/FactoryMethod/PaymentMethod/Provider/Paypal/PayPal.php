@@ -8,10 +8,11 @@ class PayPal implements PaymentProviderInterface
 {
     /**
      * @inheritDoc
+     * @return bool
      */
     public function processPayment(): bool
     {
-        echo 'از طریق پی پل پول بده';
+        echo 'Pay with PayPal';
         return true;
     }
 }
