@@ -9,10 +9,10 @@ abstract class PaymentMethodFactory implements PaymentMethodFactoryInterface
     /**
      * @inheritDoc
      */
-    public function processPayment(): bool
+    public function processPayment(Order $order): bool
     {
         $payment = $this->createPaymentProvider();
-        return $payment->processPayment();
+        return $payment->processPayment($order);
     }
 
     /**

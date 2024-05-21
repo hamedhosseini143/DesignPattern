@@ -9,25 +9,30 @@ use InvalidArgumentException;
 class Client
 {
     /**
+     * @var Order
+     */
+    private Order $order;
+    /**
      * @var string
      */
     private string $paymentMethod;
 
     /**
      * @param string $paymentMethod
+     * @param Order $order
      */
-    public function __construct(string $paymentMethod)
+    public function __construct(string $paymentMethod, Order $order)
     {
         $this->paymentMethod = $paymentMethod;
+        $this->order = $order;
     }
 
     /**
-     * @param $checkPayment
      * @return bool
      */
-    public function processPayment($checkPayment): bool
+    public function processPayment(): bool
     {
-        return $this->getPaymentMethod()->processPayment();
+        return $this->getPaymentMethod()->processPayment($this->order);
     }
 
     /**
