@@ -1,5 +1,4 @@
 <?php
-
 namespace src\DesignPattern\Creational\FactoryMethod\PaymentMethod;
 
 use InvalidArgumentException;
