@@ -2,9 +2,9 @@
 
 namespace src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Tailwind\Elements;
 
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\RadioButton;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\RadioButtonInterface;
 
-class TailwindRadioButton implements RadioButton
+class TailwindRadioButton implements RadioButtonInterface
 {
 
     /**

@@ -2,9 +2,9 @@
 
 namespace src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Bootstrap\Elements;
 
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextInput;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextInputInterface;
 
-class BootstrapTextInput implements TextInput
+class BootstrapTextInput implements TextInputInterface
 {
 
     /**

@@ -2,7 +2,7 @@
 
 namespace src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements;
 
-interface TextArea
+interface TextAreaInterface
 {
     /**
      * @return string

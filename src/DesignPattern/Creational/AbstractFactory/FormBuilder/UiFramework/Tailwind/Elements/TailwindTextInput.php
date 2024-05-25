@@ -2,9 +2,9 @@
 
 namespace src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Tailwind\Elements;
 
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextInput;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextInputInterface;
 
-class TailwindTextInput implements TextInput
+class TailwindTextInput implements TextInputInterface
 {
 
     /**

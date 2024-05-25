@@ -2,9 +2,9 @@
 
 namespace src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Tailwind\Elements;
 
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextArea;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextAreaInterface;
 
-class TailwindTextArea implements TextArea
+class TailwindTextAreaInterface implements TextAreaInterface
 {
 
     /**

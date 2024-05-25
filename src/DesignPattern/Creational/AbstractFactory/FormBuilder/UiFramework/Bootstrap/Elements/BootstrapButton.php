@@ -2,9 +2,9 @@
 
 namespace src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Bootstrap\Elements;
 
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\Button;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\ButtonInterface;
 
-class BootstrapButton implements Button
+class BootstrapButton implements ButtonInterface
 {
     /**
      * @return string

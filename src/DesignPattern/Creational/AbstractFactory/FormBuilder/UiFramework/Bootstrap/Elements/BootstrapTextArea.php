@@ -2,9 +2,9 @@
 
 namespace src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Bootstrap\Elements;
 
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextArea;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextAreaInterface;
 
-class BootstrapTextArea implements TextArea
+class BootstrapTextArea implements TextAreaInterface
 {
 
     /**

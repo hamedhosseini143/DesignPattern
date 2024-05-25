@@ -2,9 +2,9 @@
 
 namespace src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Tailwind\Elements;
 
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\Button;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\ButtonInterface;
 
-class TailwindButton implements Button
+class TailwindButton implements ButtonInterface
 {
 
     /**

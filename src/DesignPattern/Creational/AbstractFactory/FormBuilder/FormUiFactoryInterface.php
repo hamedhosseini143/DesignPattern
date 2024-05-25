@@ -2,30 +2,30 @@
 
 namespace src\DesignPattern\Creational\AbstractFactory\FormBuilder;
 
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\Button;
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\RadioButton;
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextArea;
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextInput;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\ButtonInterface;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\RadioButtonInterface;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextAreaInterface;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextInputInterface;
 
 interface FormUiFactoryInterface
 {
     /**
-     * @return Button
+     * @return ButtonInterface
      */
-    public function createButton(): Button;
+    public function createButton(): ButtonInterface;
 
     /**
-     * @return TextInput
+     * @return TextInputInterface
      */
-    public function createTextInput(): TextInput;
+    public function createTextInput(): TextInputInterface;
 
     /**
-     * @return TextArea
+     * @return TextAreaInterface
      */
-    public function createTextArea(): TextArea;
+    public function createTextArea(): TextAreaInterface;
 
     /**
-     * @return RadioButton
+     * @return RadioButtonInterface
      */
-    public function createRadio(): RadioButton;
+    public function createRadio(): RadioButtonInterface;
 }

@@ -2,14 +2,14 @@
 
 namespace src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Tailwind;
 
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\Button;
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\RadioButton;
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextArea;
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextInput;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\ButtonInterface;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\RadioButtonInterface;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextAreaInterface;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextInputInterface;
 use src\DesignPattern\Creational\AbstractFactory\FormBuilder\FormUiFactoryInterface;
 use src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Tailwind\Elements\TailwindButton;
 use src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Tailwind\Elements\TailwindRadioButton;
-use src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Tailwind\Elements\TailwindTextArea;
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Tailwind\Elements\TailwindTextAreaInterface;
 use src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Tailwind\Elements\TailwindTextInput;
 
 
@@ -17,33 +17,33 @@ class TailwindFormFactory implements FormUiFactoryInterface
 {
 
     /**
-     * @return Button
+     * @return ButtonInterface
      */
-    public function createButton(): Button
+    public function createButton(): ButtonInterface
     {
         return new TailwindButton();
     }
 
     /**
-     * @return TextInput
+     * @return TextInputInterface
      */
-    public function createTextInput(): TextInput
+    public function createTextInput(): TextInputInterface
     {
         return new TailwindTextInput();
     }
 
     /**
-     * @return TextArea
+     * @return TextAreaInterface
      */
-    public function createTextArea(): TextArea
+    public function createTextArea(): TextAreaInterface
     {
-        return new TailwindTextArea();
+        return new TailwindTextAreaInterface();
     }
 
     /**
-     * @return RadioButton
+     * @return RadioButtonInterface
      */
-    public function createRadio(): RadioButton
+    public function createRadio(): RadioButtonInterface
     {
         return new TailwindRadioButton();
     }

@@ -2,10 +2,10 @@
 
 namespace src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements;
 
-interface TextInput
+interface RadioButtonInterface
 {
     /**
      * @return string
      */
-    public function render(): string;
+    public function render() : string;
 }
