@@ -3,6 +3,7 @@
 require 'vendor/autoload.php';
 
 use src\DesignPattern\Creational\AbstractFactory\FormBuilder\FormBuilderClient;
+use src\DesignPattern\Creational\Builder\RequestBuilder\ApiService;
 use src\DesignPattern\Creational\FactoryMethod\PaymentMethod\Client;
 use src\DesignPattern\Creational\FactoryMethod\PaymentMethod\Order;
 
@@ -34,4 +35,19 @@ echo "<br>";
 echo "/** end abstract factory pattern  */";
 
 /** end abstract factory pattern  */
+
+/** start builder pattern  */
+echo "<br>";
+echo "/** start builder pattern  */";
+echo "<br>";
+$request = new ApiService();
+$user = $request->fetchUser();
+echo "<pre>";
+print_r($user);
+echo "</pre>";
+echo "<br>";
+echo "/** end builder pattern  */";
+
+/** end builder pattern  */
+
 

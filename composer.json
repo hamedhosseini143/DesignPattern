@@ -11,5 +11,8 @@
             "email": "hamedhosseini0143@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+      "ext-curl": "*",
+        "guzzlehttp/guzzle": "^7.8"
+    }
 }

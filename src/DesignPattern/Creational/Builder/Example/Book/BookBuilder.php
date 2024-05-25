@@ -1,6 +1,6 @@
 <?php
 
-namespace src\DesignPattern\Builder\Example\Book;
+namespace src\DesignPattern\Creational\Builder\Example\Book;
 
 class BookBuilder
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace src\DesignPattern\Builder\Example\Tasks;
+namespace src\DesignPattern\Creational\Builder\Example\Tasks;
 
 class TasksBuilder
 {

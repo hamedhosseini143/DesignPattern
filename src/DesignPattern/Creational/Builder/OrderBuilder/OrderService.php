@@ -1,6 +1,6 @@
 <?php
 
-namespace src\DesignPattern\Builder\OrderBuilder;
+namespace src\DesignPattern\Creational\Builder\OrderBuilder;
 
 class OrderService
 {
