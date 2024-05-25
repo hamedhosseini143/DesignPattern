@@ -37,6 +37,7 @@ echo "/** end abstract factory pattern  */";
 /** end abstract factory pattern  */
 
 /** start builder pattern  */
+
 echo "<br>";
 echo "/** start builder pattern  */";
 echo "<br>";

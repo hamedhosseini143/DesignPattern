@@ -52,8 +52,7 @@ class Request
             'body' => json_encode($this->data),
             'agent' => $this->agent
         ]);
-        $content = $response->getBody()->getContents();
-        return Json_encode($content);
+        return $response->getBody()->getContents();
     }
 
 }
