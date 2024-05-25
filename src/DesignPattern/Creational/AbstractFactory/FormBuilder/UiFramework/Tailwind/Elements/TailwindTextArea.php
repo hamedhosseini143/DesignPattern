@@ -1,0 +1,17 @@
+<?php
+
+namespace src\DesignPattern\Creational\AbstractFactory\FormBuilder\UiFramework\Tailwind\Elements;
+
+use src\DesignPattern\Creational\AbstractFactory\FormBuilder\Elements\TextArea;
+
+class TailwindTextArea implements TextArea
+{
+
+    /**
+     * @return string
+     */
+    public function render(): string
+    {
+        return '<textarea class="border border-gray-300 rounded-md"></textarea>';
+    }
+}
