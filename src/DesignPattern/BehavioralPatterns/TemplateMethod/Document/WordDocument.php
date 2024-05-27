@@ -11,6 +11,7 @@ class WordDocument extends Document
     protected function openDocument(): void
     {
         echo "Open Word document\n";
+        echo "<br>";
     }
 
     /**
@@ -19,6 +20,7 @@ class WordDocument extends Document
     protected function addDocument(): void
     {
         echo "Add content to Word document\n";
+        echo "<br>";
     }
 
     /**
@@ -27,6 +29,7 @@ class WordDocument extends Document
     protected function saveDocument(): void
     {
         echo "Save Word document\n";
+        echo "<br>";
     }
 
     /**
@@ -35,5 +38,6 @@ class WordDocument extends Document
     protected function closeDocument(): void
     {
         echo "Close Word document\n";
+        echo "<br>";
     }
 }

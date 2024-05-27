@@ -11,6 +11,7 @@ class PdfDocument extends Document
     protected function openDocument(): void
     {
         echo "Open PDF document\n";
+        echo "<br>";
     }
 
     /**
@@ -19,6 +20,7 @@ class PdfDocument extends Document
     protected function addDocument(): void
     {
         echo "Add content to PDF document\n";
+        echo "<br>";
     }
 
     /**
@@ -27,6 +29,7 @@ class PdfDocument extends Document
     protected function saveDocument(): void
     {
         echo "Save PDF document\n";
+        echo "<br>";
     }
 
     /**
@@ -35,5 +38,6 @@ class PdfDocument extends Document
     protected function closeDocument(): void
     {
         echo "Close PDF document\n";
+        echo "<br>";
     }
 }
