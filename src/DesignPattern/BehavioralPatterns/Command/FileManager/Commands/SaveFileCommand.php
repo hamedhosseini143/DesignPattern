@@ -1,0 +1,32 @@
+<?php
+
+namespace src\DesignPattern\BehavioralPatterns\Command\FileManager\Commands;
+
+use src\DesignPattern\BehavioralPatterns\Command\FileManager\FileCommandInterface;
+use src\DesignPattern\BehavioralPatterns\Command\FileManager\FileManager;
+
+class SaveFileCommand implements FileCommandInterface
+{
+    private FileManager $fileManager;
+
+    private $file;
+
+    /**
+     * @param FileManager $fileManager
+     * @param $file
+     */
+    public function __construct(FileManager $fileManager, $file)
+    {
+        $this->fileManager = $fileManager;
+        $this->file = $file;
+    }
+
+
+    /**
+     * @return  void
+     */
+    public function execute(): void
+    {
+         $this->fileManager->save($this);
+    }
+}
