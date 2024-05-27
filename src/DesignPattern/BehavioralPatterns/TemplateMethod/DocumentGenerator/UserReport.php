@@ -2,31 +2,46 @@
 
 namespace src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator;
 
-use Illuminate\Database\Eloquent\Collection;
-
 abstract class UserReport
 {
-    private Collection $users;
-    protected Collection $dataToExport;
+    /**
+     * @var UserData
+     */
+    private UserData $users;
+    /**
+     * @var array
+     */
+    protected array $dataToExport;
 
     /**
-     * @param Collection $users
+     * @param UserData $users
      */
-    public function __construct(Collection $users)
+    public function __construct(UserData $users)
     {
         $this->users = $users;
     }
 
-
+    /**
+     * @return void
+     */
     public function generate(): void
     {
         $this->dataToExport = $this->prepare();
+        $this->export();
     }
-    private function prepare(): Collection
+
+    /**
+     * @return array
+     */
+    private function prepare(): array
     {
        return $this->users->filter(function ($user) {
-            return $user->is_active;
+           return $user['active'] == 1;
         });
     }
-    abstract protected function export();
+
+    /**
+     * @return void
+     */
+    abstract protected function export(): void;
 }

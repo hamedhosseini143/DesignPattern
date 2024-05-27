@@ -4,14 +4,11 @@ namespace src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator;
 
 class UserReportToCsv extends UserReport
 {
-
     /**
-     * @return mixed
+     * @return void
      */
-    protected function export()
+    protected function export() : void
     {
-        // Export to CSV
-        $this->dataToExport;
-
+        echo "Exporting to CSV\n";
     }
 }

@@ -6,10 +6,10 @@ class UserReportToWord extends UserReport
 {
 
     /**
-     * @return mixed
+     * @return void
      */
-    protected function export()
+    protected function export(): void
     {
-       // Export to Word
+        echo "Exporting to Word\n";
     }
 }

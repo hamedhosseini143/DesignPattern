@@ -6,12 +6,11 @@ class UserReportToPdf extends UserReport
 {
 
     /**
-     * @return mixed
+     * @return void
      */
-    protected function export()
+    protected function export(): void
     {
-        // Export to PDF
-        $this->dataToExport;
+        echo "Exporting to PDF\n";
 
     }
 }
