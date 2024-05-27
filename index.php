@@ -77,6 +77,14 @@ echo "<br>";
 echo "/** end template method pattern  */";
 
 /** end template method pattern  */
+/** start command pattern  */
+echo "/** start command pattern  */";
+echo "<br>";
 
+$addTaskCommand = new \src\DesignPattern\BehavioralPatterns\Command\Tasks\ClientCommandPattern();
+$addTaskCommand->add();
+echo "<br>";
+echo "/** end command pattern  */";
+/** end command pattern  */
 
 

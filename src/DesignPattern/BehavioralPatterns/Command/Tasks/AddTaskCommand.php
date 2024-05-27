@@ -2,10 +2,19 @@
 
 namespace src\DesignPattern\BehavioralPatterns\Command\Tasks;
 
-class AddTaskCommand implements Command
+class AddTaskCommand implements CommandInterface
 {
+    /**
+     * @var string
+     */
     private string $title;
+    /**
+     * @var string
+     */
     private string $content;
+    /**
+     * @var AddTaskHandler
+     */
     private AddTaskHandler $AddTaskHandler;
 
     /**
@@ -22,10 +31,27 @@ class AddTaskCommand implements Command
 
 
     /**
-     * @return mixed
+     * @return void
      */
-    public function execute()
+    public function execute(): void
     {
-        return $this->AddTaskHandler->execute($this);
+        $this->AddTaskHandler->execute($this);
     }
+
+    /**
+     * @return string
+     */
+    public function getContent(): string
+    {
+        return $this->content;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle(): string
+    {
+        return $this->title;
+    }
+
 }
