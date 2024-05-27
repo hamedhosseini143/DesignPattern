@@ -2,6 +2,7 @@
 
 require 'vendor/autoload.php';
 
+use src\DesignPattern\BehavioralPatterns\TemplateMethod\Document\ClientDocument;
 use src\DesignPattern\CreationalPatterns\AbstractFactory\FormBuilder\FormBuilderClient;
 use src\DesignPattern\CreationalPatterns\Builder\RequestBuilder\ApiService;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Client;
@@ -48,7 +49,34 @@ print_r($user);
 echo "</pre>";
 echo "<br>";
 echo "/** end builder pattern  */";
-
+echo "<br>";
 /** end builder pattern  */
+
+
+/** start template method pattern  */
+echo "/** start template method pattern  */";
+echo "<br>";
+
+$document = new ClientDocument('word');
+try {
+    $document->generateDocument();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
+echo "<br>";
+$document = new ClientDocument('pdf');
+
+try {
+    $document->generateDocument();
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
+echo "<br>";
+echo "/** end template method pattern  */";
+
+/** end template method pattern  */
+
 
 
