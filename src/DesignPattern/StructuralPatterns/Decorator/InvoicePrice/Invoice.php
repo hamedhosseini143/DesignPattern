@@ -5,9 +5,9 @@ namespace src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice;
 class Invoice implements InvoicePriceInterface
 {
     /**
-     * @return int
+     * @return float
      */
-    public function price(): int
+    public function price(): float
     {
         return 100;
     }

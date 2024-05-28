@@ -2,12 +2,13 @@
 
 namespace src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice;
 
-class VATInvoicePrice extends InvoiceDecorator
+class VatInvoicePrice extends InvoiceDecorator
 {
     /**
-     * @return int
+     * @return float
+     * add value added tax
      */
-    public function price(): int
+    public function price(): float
     {
         return parent::price() * 1.18;
     }

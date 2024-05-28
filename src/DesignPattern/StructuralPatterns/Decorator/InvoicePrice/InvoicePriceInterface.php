@@ -5,7 +5,7 @@ namespace src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice;
 interface InvoicePriceInterface
 {
     /**
-     * @return int
+     * @return float
      */
-    public function price(): int;
+    public function price(): float;
 }

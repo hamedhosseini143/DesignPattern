@@ -2,12 +2,13 @@
 
 namespace src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice;
 
-class ServiveInvoicePrice extends InvoiceDecorator
+class DeliverInvoicePrice extends InvoiceDecorator
 {
     /**
-     * @return int
+     * @return float
+     * add delivery price
      */
-    public function price(): int
+    public function price(): float
     {
         return parent::price() * 1.1;
     }

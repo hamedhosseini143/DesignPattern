@@ -5,13 +5,13 @@ namespace src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice;
 class InvoiceSrvice
 {
     /**
-     * @return int
+     * @return float
      */
-    public function calculatePrice(): int
+    public function calculatePrice(): float
     {
-        $invoice = new Invoice(); 
-        $serviceInvoice = new ServiveInvoicePrice($invoice); // price normal
-        $vatInvoice = new VatInvoicePrice($serviceInvoice); // tax
+        $invoice = new Invoice();
+        $serviceInvoice = new DeliverInvoicePrice($invoice);
+        $vatInvoice = new VatInvoicePrice($serviceInvoice);
         return $vatInvoice->price();
     }
 }

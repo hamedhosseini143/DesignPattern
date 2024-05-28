@@ -9,6 +9,7 @@ use src\DesignPattern\CreationalPatterns\Builder\RequestBuilder\ApiService;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Client;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Order;
 use src\DesignPattern\StructuralPatterns\Composite\MenuBuilder\MenuBuilderClient;
+use src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice\InvoiceSrvice;
 
 /**
  * @return void
@@ -83,6 +84,14 @@ function demoCompositePattern(): void
 
 }
 
+function demoDecoratorPattern(): void
+{
+    echo "<br>/** start Decorator Pattern */<br>";
+    $invoice = new InvoiceSrvice();
+    echo 'Total Price: ' . $invoice->calculatePrice() ;
+    echo "<br>/** end Decorator Pattern */<br>";
+}
+
 echo "<br>Starting Design Patterns Demonstrations<br>";
 demoFactoryMethodPattern();
 demoAbstractFactoryPattern();
@@ -90,4 +99,5 @@ demoBuilderPattern();
 demoTemplateMethodPattern();
 demoCommandPattern();
 demoCompositePattern();
+demoDecoratorPattern();
 echo "<br>End of Design Patterns Demonstrations<br>";
