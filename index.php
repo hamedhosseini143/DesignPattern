@@ -10,6 +10,8 @@ use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Client;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Order;
 use src\DesignPattern\StructuralPatterns\Composite\MenuBuilder\MenuBuilderClient;
 use src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice\InvoiceSrvice;
+use src\DesignPattern\StructuralPatterns\Decorator\ReportGenerator\ReportDecoratorClient;
+use src\DesignPattern\StructuralPatterns\Decorator\UserPresenter\UserDecoratorClient;
 
 /**
  * @return void
@@ -89,6 +91,12 @@ function demoDecoratorPattern(): void
     echo "<br>/** start Decorator Pattern */<br>";
     $invoice = new InvoiceSrvice();
     echo 'Total Price: ' . $invoice->calculatePrice() ;
+    echo "<br>";
+    $report = new ReportDecoratorClient();
+    echo $report->report();
+    echo "<br>";
+    $useName = new UserDecoratorClient();
+    echo $useName->client();
     echo "<br>/** end Decorator Pattern */<br>";
 }
 

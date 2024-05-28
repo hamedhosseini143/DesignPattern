@@ -2,14 +2,13 @@
 
 namespace src\DesignPattern\StructuralPatterns\Decorator\ReportGenerator;
 
-class reportService implements ReportGeneratorInterface
+class ReportService implements ReportGeneratorInterface
 {
-
     /**
      * @return string
      */
-    public function generate() : string
+    public function generate(): string
     {
-        return 'Report generated';
+        return 'Report';
     }
 }

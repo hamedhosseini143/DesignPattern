@@ -2,7 +2,7 @@
 
 namespace src\DesignPattern\StructuralPatterns\Decorator\ReportGenerator;
 
-class ReportWithHeader extends ReportDecorator
+class ReportWithFooter extends ReportDecorator
 {
 
     /**
@@ -10,6 +10,6 @@ class ReportWithHeader extends ReportDecorator
      */
     public function generate(): string
     {
-        return 'Header' . $this->reportGenerator->generate();
+        return 'Footer' . $this->reportGenerator->generate();
     }
 }

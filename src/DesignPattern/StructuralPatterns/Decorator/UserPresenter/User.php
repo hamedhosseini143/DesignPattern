@@ -5,45 +5,34 @@ namespace src\DesignPattern\StructuralPatterns\Decorator\UserPresenter;
 /**
  *
  */
-class User
+class User implements UserInterface
 {
     /**
-     * @var string
+     * @return string
      */
-    private string $name;
+    private string $firstName;
     /**
      * @var string
      */
     private string $lastName;
-    /**
-     * @var string
-     */
-    private string $registrationDate;
-    /**
-     * @var string
-     */
-    private string $emailAddress;
 
     /**
-     * @param $name
-     * @param $lastName
-     * @param $registrationDate
-     * @param $emailAddress
+     * @param string $firstName
+     * @param string $lastName
      */
-    public function __construct($name, $lastName, $registrationDate, $emailAddress)
+    public function __construct(string $firstName, string $lastName)
     {
-        $this->name = $name;
+        $this->firstName = $firstName;
         $this->lastName = $lastName;
-        $this->registrationDate = $registrationDate;
-        $this->emailAddress = $emailAddress;
     }
+
 
     /**
      * @return string
      */
-    public function getName(): string
+    public function getFirstName(): string
     {
-        return $this->name;
+        return $this->firstName;
     }
 
     /**
@@ -53,22 +42,4 @@ class User
     {
         return $this->lastName;
     }
-
-    /**
-     * @return string
-     */
-    public function getRegistrationDate(): string
-    {
-        return $this->registrationDate;
-    }
-
-    /**
-     * @return string
-     */
-    public function getEmailAddress(): string
-    {
-        return $this->emailAddress;
-    }
-
-
 }
