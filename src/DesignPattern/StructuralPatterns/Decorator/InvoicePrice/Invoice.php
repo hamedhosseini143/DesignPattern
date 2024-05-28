@@ -1,8 +1,8 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Decorator\InvoicePrice;
+namespace src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice;
 
-class Invoice implements InvoicePrice
+class Invoice implements InvoicePriceInterface
 {
     public function price(): int
     {

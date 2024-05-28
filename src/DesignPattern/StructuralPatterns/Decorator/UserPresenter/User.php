@@ -1,6 +1,6 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Decorator\UserPresenter;
+namespace src\DesignPattern\StructuralPatterns\Decorator\UserPresenter;
 
 /**
  *

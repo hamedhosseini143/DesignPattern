@@ -42,7 +42,7 @@ function demoBuilderPattern(): void
     echo "<br>/** Builder Pattern */<br>";
     $request = new ApiService();
     $user = $request->fetchUser();
-    echo "<pre>" . print_r($user, true) . "</pre>";
+    print_r($user);
 }
 
 /**

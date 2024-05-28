@@ -1,8 +1,8 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Decorator\ReportGenerator;
+namespace src\DesignPattern\StructuralPatterns\Decorator\ReportGenerator;
 
-class reportService implements ReportGenerator
+class reportService implements ReportGeneratorInterface
 {
 
     /**

@@ -1,12 +1,12 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Decorator\InvoicePrice;
+namespace src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice;
 
-class InvoiceDecorator implements InvoicePrice
+class InvoiceDecorator implements InvoicePriceInterface
 {
-    private \src\DesignPattern\StructuralPatterns \Decorator\InvoicePrice\InvoicePrice $invoicePrice;
+    private InvoicePriceInterface $invoicePrice;
 
-    public function __construct(\src\DesignPattern\StructuralPatterns \Decorator\InvoicePrice\InvoicePrice $invoicePrice)
+    public function __construct(InvoicePriceInterface $invoicePrice)
     {
         $this->invoicePrice = $invoicePrice;
     }

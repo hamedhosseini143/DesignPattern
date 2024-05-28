@@ -1,13 +1,13 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Decorator\ReportGenerator;
+namespace src\DesignPattern\StructuralPatterns\Decorator\ReportGenerator;
 
-abstract class ReportDecorator implements ReportGenerator
+abstract class ReportDecorator implements ReportGeneratorInterface
 {
-    protected \src\DesignPattern\StructuralPatterns \Decorator\ReportGenerator\ReportGenerator $reportGenerator ;
+    protected ReportGeneratorInterface $reportGenerator ;
 
 
-    public function __construct(\src\DesignPattern\StructuralPatterns \Decorator\ReportGenerator\ReportGenerator $reportGenerator)
+    public function __construct(ReportGeneratorInterface $reportGenerator)
     {
         $this->reportGenerator = $reportGenerator;
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Decorator\InvoicePrice;
+namespace src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice;
 
 class VATInvoicePrice extends InvoiceDecorator
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Decorator\ReportGenerator;
+namespace src\DesignPattern\StructuralPatterns\Decorator\ReportGenerator;
 
 class ReportWithHeader extends ReportDecorator
 {

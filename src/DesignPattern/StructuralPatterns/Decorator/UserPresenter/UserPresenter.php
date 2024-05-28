@@ -1,12 +1,12 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Decorator\UserPresenter;
+namespace src\DesignPattern\StructuralPatterns\Decorator\UserPresenter;
 
 class UserPresenter
 {
     private User $user;
 
-    public function __construct(\src\DesignPattern\StructuralPatterns \Decorator\UserPresenter\User $user)
+    public function __construct(User $user)
     {
         $this->user = $user;
     }
