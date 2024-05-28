@@ -1,6 +1,6 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Composite\MenuBuilder;
+namespace src\DesignPattern\StructuralPatterns\Composite\MenuBuilder;
 
 class MenuBuilder
 {
