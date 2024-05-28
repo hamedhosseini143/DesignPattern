@@ -4,6 +4,9 @@ namespace src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice;
 
 class InvoiceSrvice
 {
+    /**
+     * @return int
+     */
     public function calculatePrice(): int
     {
         $invoice = new Invoice(); 
