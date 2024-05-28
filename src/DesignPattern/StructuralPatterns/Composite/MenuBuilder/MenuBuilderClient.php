@@ -2,16 +2,18 @@
 
 namespace src\DesignPattern\StructuralPatterns\Composite\MenuBuilder;
 
-class MenuBuilder
+class MenuBuilderClient
 {
     public function buildMenu(): string
     {
         $menuItem1 = new MenuItem('google' , 'http://www.google.com');
-        $menuItem2 = new \src\DesignPattern\StructuralPatterns \Composite\MenuBuilder\MenuItem('yahoo' , 'http://www.yahoo.com');
-        $menuItem3 = new \src\DesignPattern\StructuralPatterns \Composite\MenuBuilder\MenuItem('bing' , 'http://www.bing.com');
+        $menuItem2 = new MenuItem('yahoo', 'http://www.yahoo.com');
+        $menuItem3 = new MenuItem('bing', 'http://www.bing.com');
+        $menuItem4 = new MenuItem('facebook', 'http://www.facebook.com');
 
         $menu = new MenuCollection();
-        $subMenu = new \src\DesignPattern\StructuralPatterns \Composite\MenuBuilder\MenuCollection();
+        $menu->add($menuItem4);
+        $subMenu = new MenuCollection();
 
         $subMenu->add($menuItem1);
         $subMenu->add($menuItem2);

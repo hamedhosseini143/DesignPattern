@@ -1,21 +1,33 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Composite\Basket;
+namespace src\DesignPattern\StructuralPatterns\Composite\Basket;
 
 class Basket
 {
-    private $items = [];
+    /**
+     * @var array
+     */
+    private array $items = [];
 
-    public function add(ProductItem $item) : void
+    /**
+     * @param ProductItemInterface $item
+     * @return void
+     */
+    public function add(ProductItemInterface $item) : void
     {
         $this->items[] = $item;
     }
 
+    /**
+     * @return float
+     */
     public function total() : float
     {
         $total = 0;
-        foreach ($this->items as $item) {
-            $total += $item->price();
+        if (!empty($this)) {
+            foreach ($this->items as $item) {
+                $total += $item->price();
+            }
         }
         return $total;
     }

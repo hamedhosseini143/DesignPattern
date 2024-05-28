@@ -1,12 +1,22 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Composite\MenuBuilder;
+namespace src\DesignPattern\StructuralPatterns\Composite\MenuBuilder;
 
-class MenuItem implements MenuComponent
+class MenuItem implements MenuComponentInterface
 {
+    /**
+     * @var string
+     */
     private string $title;
+    /**
+     * @var string
+     */
     private string $url;
 
+    /**
+     * @param string $title
+     * @param string $url
+     */
     public function __construct(string $title, string $url)
     {
         $this->title = $title;

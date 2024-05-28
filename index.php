@@ -8,6 +8,7 @@ use src\DesignPattern\CreationalPatterns\AbstractFactory\FormBuilder\FormBuilder
 use src\DesignPattern\CreationalPatterns\Builder\RequestBuilder\ApiService;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Client;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Order;
+use src\DesignPattern\StructuralPatterns\Composite\MenuBuilder\MenuBuilderClient;
 
 /**
  * @return void
@@ -73,10 +74,20 @@ function demoCommandPattern(): void
     $addTaskCommand->add();
 }
 
+function demoCompositePattern(): void
+{
+    echo "<br>/** start Composite Pattern */<br>";
+    $menu = new MenuBuilderClient();
+    echo $menu->buildMenu();
+    echo "<br>/** end Composite Pattern */<br>";
+
+}
+
 echo "<br>Starting Design Patterns Demonstrations<br>";
 demoFactoryMethodPattern();
 demoAbstractFactoryPattern();
 demoBuilderPattern();
 demoTemplateMethodPattern();
 demoCommandPattern();
+demoCompositePattern();
 echo "<br>End of Design Patterns Demonstrations<br>";

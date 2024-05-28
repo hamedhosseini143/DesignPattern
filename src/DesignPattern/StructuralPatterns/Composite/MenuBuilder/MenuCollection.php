@@ -1,12 +1,19 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Composite\MenuBuilder;
+namespace src\DesignPattern\StructuralPatterns\Composite\MenuBuilder;
 
-class MenuCollection implements MenuComponent
+class MenuCollection implements MenuComponentInterface
 {
+    /**
+     * @var array
+     */
     private array $menuItems = [];
 
-    public function add(\src\DesignPattern\StructuralPatterns \Composite\MenuBuilder\MenuComponent $menuComponent): void
+    /**
+     * @param MenuComponentInterface $menuComponent
+     * @return void
+     */
+    public function add(MenuComponentInterface $menuComponent): void
     {
         $this->menuItems[] = $menuComponent;
     }

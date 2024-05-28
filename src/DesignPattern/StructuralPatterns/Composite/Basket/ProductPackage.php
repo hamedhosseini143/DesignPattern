@@ -1,21 +1,30 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Composite\Basket;
+namespace src\DesignPattern\StructuralPatterns\Composite\Basket;
 
-class ProductPackage implements ProductItem
+class ProductPackage implements ProductItemInterface
 {
+    /**
+     * @var array
+     */
     private array $products;
 
+    /**
+     * @param array $products
+     */
     public function __construct(array $products)
     {
         $this->products = $products;
     }
 
+    /**
+     * @return float
+     */
     public function price(): float
     {
         $total = 0;
-        foreach ($this->products as $product) {
-            $total += $product->price();
+        if (!empty($this->products)) {
+            foreach ($this->products as $product) $total += $product->price();
         }
         return $total;
     }
