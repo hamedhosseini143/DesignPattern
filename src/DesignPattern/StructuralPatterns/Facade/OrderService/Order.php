@@ -30,6 +30,11 @@ class Order
         $this->orderLines = $orderLines;
     }
 
+    public static function create(float $amount, float $discount, array $orderLines): self
+    {
+        return new self($amount, $discount, $orderLines);
+    }
+
     /**
      * @return float
      */

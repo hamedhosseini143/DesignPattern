@@ -3,7 +3,6 @@
 require 'vendor/autoload.php';
 
 use src\DesignPattern\BehavioralPatterns\Command\Tasks\ClientCommandPattern;
-use src\DesignPattern\BehavioralPatterns\TemplateMethod\Document\ClientDocument;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\DocumentGeneratorClient;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\UserData;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\UserReportToCsv;
@@ -15,9 +14,13 @@ use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Client;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Order;
 use src\DesignPattern\StructuralPatterns\Composite\MenuBuilder\MenuBuilderClient;
 use src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice\ClientDecoratorOverprice;
-use src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice\InvoiceSrvice;
 use src\DesignPattern\StructuralPatterns\Decorator\ReportGenerator\ReportDecoratorClient;
 use src\DesignPattern\StructuralPatterns\Decorator\UserPresenter\UserDecoratorClient;
+use src\DesignPattern\StructuralPatterns\Facade\OrderService\Basket;
+use src\DesignPattern\StructuralPatterns\Facade\OrderService\DiscountService;
+use src\DesignPattern\StructuralPatterns\Facade\OrderService\OrderServiceFacade;
+use src\DesignPattern\StructuralPatterns\Facade\OrderService\Product;
+use src\DesignPattern\StructuralPatterns\Facade\OrderService\QuantityService;
 
 /**
  * @return void
@@ -98,6 +101,24 @@ function demoDecoratorPattern() : void
     echo $useName->client();
     echo "<br>/** end Decorator Pattern */<br>";
 }
+
+function demoFacadePattern(): void
+{
+    echo "<br>/** start Facade Pattern */<br>";
+
+    $quantityService = new QuantityService();
+    $discountService = new DiscountService();
+    $orderServiceFacade = new OrderServiceFacade($quantityService, $discountService);
+
+    $basket = new Basket();
+    $basket->add(new Product(100, 'product1'));
+    $basket->add(new Product(200, 'product2'));
+
+    $order = $orderServiceFacade->register($basket);
+    echo $order;
+
+    echo "<br>/** end Facade Pattern */<br>";
+}
 echo "<br>Starting Design Patterns Demonstrations<br>";
 demoFactoryMethodPattern();
 demoAbstractFactoryPattern();
@@ -106,4 +127,5 @@ demoCommandPattern();
 demoCompositePattern();
 demoDecoratorPattern();
 demoTemplateMethod();
+demoFacadePattern();
 echo "<br>End of Design Patterns Demonstrations<br>";

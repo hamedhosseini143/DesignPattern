@@ -5,17 +5,26 @@ namespace src\DesignPattern\StructuralPatterns\Facade\OrderService;
 class DiscountService
 {
 
+    /**
+     * @param Product $product
+     * @return bool
+     */
     private function isValid(Product $product): bool
     {
         return true;
     }
 
-    public function apply( string $discountCode): float
+    /**
+     * @param string $discountCode
+     * @param $totalPrice
+     * @return float
+     */
+    public function apply(string $discountCode, $totalPrice): float
     {
          if ($discountCode === 'DISCOUNT') {
-             return 0.1;
+                return $totalPrice * 0.9;
          }
 
-         return 0;
+         return $totalPrice;
     }
 }
