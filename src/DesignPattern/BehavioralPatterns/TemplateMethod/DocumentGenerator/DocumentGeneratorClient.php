@@ -2,27 +2,27 @@
 
 namespace src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator;
 
+
 class DocumentGeneratorClient
 {
     /**
-     * @var UserData
+     * @var UserReporter
      */
-    private UserData $users;
+    private UserReporter $userReporter;
 
     /**
-     * @param UserData $users
+     * @param UserReporter $userReporter
      */
-    public function __construct(UserData $users)
+    public function __construct(UserReporter $userReporter)
     {
-        $this->users = $users;
+        $this->userReporter = $userReporter;
     }
 
     /**
-     * @return void
+     * @return UserData
      */
-    public function generateUserReportToCsv(): void
+    public function generateDocument():UserData
     {
-        $userReportToCsv = new UserReportToCsv($this->users);
-        $userReportToCsv->generate();
+      return  $this->userReporter->generate();
     }
 }

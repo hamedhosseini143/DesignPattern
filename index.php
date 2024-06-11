@@ -4,6 +4,9 @@ require 'vendor/autoload.php';
 
 use src\DesignPattern\BehavioralPatterns\Command\Tasks\ClientCommandPattern;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\Document\ClientDocument;
+use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\DocumentGeneratorClient;
+use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\UserData;
+use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\UserReportToCsv;
 use src\DesignPattern\CreationalPatterns\AbstractFactory\FormBuilder\FormBuilderClient;
 use src\DesignPattern\CreationalPatterns\Builder\RequestBuilder\ApiService;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Client;
@@ -100,6 +103,14 @@ function demoDecoratorPattern(): void
     echo "<br>/** end Decorator Pattern */<br>";
 }
 
+function demoTemplateMethod() : void
+{
+    echo "<br>/** start Template Method Pattern */<br>";
+    $DocumentGenerator = new DocumentGeneratorClient(new UserReportToCsv(new UserData()));
+    echo $DocumentGenerator->generateDocument();
+    echo "<br>/** end Template Method Pattern */<br>";
+}
+
 echo "<br>Starting Design Patterns Demonstrations<br>";
 demoFactoryMethodPattern();
 demoAbstractFactoryPattern();
@@ -108,4 +119,5 @@ demoTemplateMethodPattern();
 demoCommandPattern();
 demoCompositePattern();
 demoDecoratorPattern();
+demoTemplateMethod();
 echo "<br>End of Design Patterns Demonstrations<br>";

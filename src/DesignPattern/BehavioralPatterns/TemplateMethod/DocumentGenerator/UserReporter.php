@@ -2,7 +2,10 @@
 
 namespace src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator;
 
-abstract class UserReport
+/**
+ *
+ */
+abstract class UserReporter
 {
     /**
      * @var UserData

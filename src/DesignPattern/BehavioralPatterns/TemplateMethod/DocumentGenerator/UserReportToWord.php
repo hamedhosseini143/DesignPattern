@@ -2,8 +2,18 @@
 
 namespace src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator;
 
-class UserReportToWord extends UserReport
+/**
+ *
+ */
+class UserReportToWord extends UserReporter
 {
+    /**
+     * @param UserData $users
+     */
+    public function __construct(UserData $users)
+    {
+        parent::__construct($users);
+    }
 
     /**
      * @return void

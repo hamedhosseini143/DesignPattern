@@ -2,8 +2,19 @@
 
 namespace src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator;
 
-class UserReportToCsv extends UserReport
+/**
+ *
+ */
+class UserReportToCsv extends UserReporter
 {
+    /**
+     * @param UserData $users
+     */
+    public function __construct(UserData $users)
+    {
+        parent::__construct($users);
+    }
+
     /**
      * @return void
      */
