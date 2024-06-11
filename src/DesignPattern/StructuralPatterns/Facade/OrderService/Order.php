@@ -1,58 +1,58 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Facade\OrderService;
+namespace src\DesignPattern\StructuralPatterns\Facade\OrderService;
+
 
 class Order
 {
-    private $userId;
-    private $amount;
-    private $orderLines;
-    private $discount;
+    /**
+     * @var float
+     */
+    private float $amount;
+    /**
+     * @var array
+     */
+    private array $orderLines;
+    /**
+     * @var float
+     */
+    private float $discount;
 
     /**
-     * @param $userId
-     * @param $amount
-     * @param $orderLines
-     * @param $discount
+     * @param float $amount
+     * @param float $discount
+     * @param array $orderLines
      */
-    public function __construct($userId, $amount, $orderLines, $discount)
+    public function __construct(float $amount, float $discount, array $orderLines)
     {
-        $this->userId = $userId;
         $this->amount = $amount;
-        $this->orderLines = $orderLines;
         $this->discount = $discount;
+        $this->orderLines = $orderLines;
     }
 
     /**
-     * @return mixed
+     * @return float
      */
-    public function getUserId(): int
-    {
-        return $this->userId;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getAmount() : int
+    public function getAmount(): float
     {
         return $this->amount;
     }
 
     /**
-     * @return mixed
+     * @return float
      */
-    public function getOrderLines() : array
+    public function getDiscount(): float
+    {
+        return $this->discount;
+    }
+
+    /**
+     * @return array
+     */
+    public function getOrderLines(): array
     {
         return $this->orderLines;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getDiscount() : float
-    {
-        return $this->discount;
-    }
 
 }

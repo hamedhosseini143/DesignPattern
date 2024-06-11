@@ -1,6 +1,6 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Facade\OrderService;
+namespace src\DesignPattern\StructuralPatterns\Facade\OrderService;
 
 class StockService
 {
