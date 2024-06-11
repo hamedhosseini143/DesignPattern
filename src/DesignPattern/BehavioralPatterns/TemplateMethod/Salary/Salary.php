@@ -11,7 +11,7 @@ abstract class Salary
 
     protected function overtime() : int
     {
-
+        return 0.1 * $this->getBasicSalary();
     }
 
     abstract protected function getBasicSalary(): int;

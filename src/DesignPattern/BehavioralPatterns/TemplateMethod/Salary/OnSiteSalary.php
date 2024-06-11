@@ -10,6 +10,6 @@ class OnSiteSalary extends Salary
      */
     protected function getBasicSalary(): int
     {
-        return 1000;
+        return 5000;
     }
 }

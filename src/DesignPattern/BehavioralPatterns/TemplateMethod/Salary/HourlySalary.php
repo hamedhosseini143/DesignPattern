@@ -10,6 +10,6 @@ class HourlySalary extends Salary
      */
     protected function getBasicSalary(): int
     {
-        return 500;
+        return 50;
     }
 }

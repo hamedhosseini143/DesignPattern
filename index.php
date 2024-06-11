@@ -7,6 +7,8 @@ use src\DesignPattern\BehavioralPatterns\TemplateMethod\Document\ClientDocument;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\DocumentGeneratorClient;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\UserData;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\UserReportToCsv;
+use src\DesignPattern\BehavioralPatterns\TemplateMethod\Salary\OnSiteSalary;
+use src\DesignPattern\BehavioralPatterns\TemplateMethod\Salary\SalaryTemplateMethodSalary;
 use src\DesignPattern\CreationalPatterns\AbstractFactory\FormBuilder\FormBuilderClient;
 use src\DesignPattern\CreationalPatterns\Builder\RequestBuilder\ApiService;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Client;
@@ -108,6 +110,10 @@ function demoTemplateMethod() : void
     echo "<br>/** start Template Method Pattern */<br>";
     $DocumentGenerator = new DocumentGeneratorClient(new UserReportToCsv(new UserData()));
     echo $DocumentGenerator->generateDocument();
+    echo "<br>/** start Template Method Pattern salary example */<br>";
+    $OnSiteSalary = new SalaryTemplateMethodSalary(new OnSiteSalary());
+    echo 'salary is: ' . $OnSiteSalary->calculateSalary();
+    echo "<br>/** end Template Method Pattern salary example */<br>";
     echo "<br>/** end Template Method Pattern */<br>";
 }
 

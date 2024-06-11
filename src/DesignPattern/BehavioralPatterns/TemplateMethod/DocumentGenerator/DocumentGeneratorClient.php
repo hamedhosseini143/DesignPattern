@@ -19,10 +19,10 @@ class DocumentGeneratorClient
     }
 
     /**
-     * @return UserData
+     * @return void
      */
-    public function generateDocument():UserData
+    public function generateDocument():void
     {
-      return  $this->userReporter->generate();
+        $this->userReporter->generate();
     }
 }

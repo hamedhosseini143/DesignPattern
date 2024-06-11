@@ -10,6 +10,6 @@ class RemoteSalary extends Salary
      */
     protected function getBasicSalary(): int
     {
-        return 2000;
+        return 2500;
     }
 }
