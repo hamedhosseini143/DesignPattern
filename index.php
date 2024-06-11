@@ -14,6 +14,7 @@ use src\DesignPattern\CreationalPatterns\Builder\RequestBuilder\ApiService;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Client;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Order;
 use src\DesignPattern\StructuralPatterns\Composite\MenuBuilder\MenuBuilderClient;
+use src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice\ClientDecoratorOverprice;
 use src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice\InvoiceSrvice;
 use src\DesignPattern\StructuralPatterns\Decorator\ReportGenerator\ReportDecoratorClient;
 use src\DesignPattern\StructuralPatterns\Decorator\UserPresenter\UserDecoratorClient;
@@ -56,25 +57,6 @@ function demoBuilderPattern(): void
 /**
  * @return void
  */
-function demoTemplateMethodPattern(): void
-{
-    echo "<br>/** Template Method Pattern */<br>";
-    try {
-        (new ClientDocument('word'))->generateDocument();
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
-    echo "<br>";
-    try {
-        (new ClientDocument('pdf'))->generateDocument();
-    } catch (Exception $e) {
-        echo $e->getMessage();
-    }
-}
-
-/**
- * @return void
- */
 function demoCommandPattern(): void
 {
     echo "<br>/** Command Pattern */<br>";
@@ -91,20 +73,6 @@ function demoCompositePattern(): void
 
 }
 
-function demoDecoratorPattern(): void
-{
-    echo "<br>/** start Decorator Pattern */<br>";
-    $invoice = new InvoiceSrvice();
-    echo 'Total Price: ' . $invoice->calculatePrice() ;
-    echo "<br>";
-    $report = new ReportDecoratorClient();
-    echo $report->report();
-    echo "<br>";
-    $useName = new UserDecoratorClient();
-    echo $useName->client();
-    echo "<br>/** end Decorator Pattern */<br>";
-}
-
 function demoTemplateMethod() : void
 {
     echo "<br>/** start Template Method Pattern */<br>";
@@ -117,11 +85,23 @@ function demoTemplateMethod() : void
     echo "<br>/** end Template Method Pattern */<br>";
 }
 
+function demoDecoratorPattern() : void
+{
+    echo "<br>/** start Decorator Pattern */<br>";
+    $invoice = new ClientDecoratorOverprice();
+    echo 'Total Price: ' . $invoice->calculatePrice() ;
+    echo "<br>";
+    $report = new ReportDecoratorClient();
+    echo $report->report();
+    echo "<br>";
+    $useName = new UserDecoratorClient();
+    echo $useName->client();
+    echo "<br>/** end Decorator Pattern */<br>";
+}
 echo "<br>Starting Design Patterns Demonstrations<br>";
 demoFactoryMethodPattern();
 demoAbstractFactoryPattern();
 demoBuilderPattern();
-demoTemplateMethodPattern();
 demoCommandPattern();
 demoCompositePattern();
 demoDecoratorPattern();

@@ -2,17 +2,17 @@
 
 namespace src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice;
 
-class InvoiceDecorator implements InvoicePriceInterface
+class InvoiceDecorator extends InvoicePrice
 {
     /**
-     * @var InvoicePriceInterface
+     * @var InvoicePrice
      */
-    private InvoicePriceInterface $invoicePrice;
+    private InvoicePrice $invoicePrice;
 
     /**
-     * @param InvoicePriceInterface $invoicePrice
+     * @param InvoicePrice $invoicePrice
      */
-    public function __construct(InvoicePriceInterface $invoicePrice)
+    public function __construct(InvoicePrice $invoicePrice)
     {
         $this->invoicePrice = $invoicePrice;
     }

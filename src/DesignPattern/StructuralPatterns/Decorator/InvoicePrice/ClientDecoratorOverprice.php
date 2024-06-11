@@ -2,14 +2,14 @@
 
 namespace src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice;
 
-class InvoiceSrvice
+class ClientDecoratorOverprice
 {
     /**
      * @return float
      */
     public function calculatePrice(): float
     {
-        $invoice = new Invoice();
+        $invoice = new InvoicePrice();
         $serviceInvoice = new DeliverInvoicePrice($invoice);
         $vatInvoice = new VatInvoicePrice($serviceInvoice);
         return $vatInvoice->price();

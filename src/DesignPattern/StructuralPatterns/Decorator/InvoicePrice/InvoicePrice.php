@@ -2,7 +2,7 @@
 
 namespace src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice;
 
-class Invoice implements InvoicePriceInterface
+class InvoicePrice implements InvoicePriceInterface
 {
     /**
      * @return float
