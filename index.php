@@ -3,6 +3,7 @@
 require 'vendor/autoload.php';
 
 use src\DesignPattern\BehavioralPatterns\Command\Tasks\ClientCommandPattern;
+use src\DesignPattern\BehavioralPatterns\Observer\Product\ClientObserver;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\DocumentGeneratorClient;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\UserData;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\UserReportToCsv;
@@ -119,6 +120,15 @@ function demoFacadePattern(): void
 
     echo "<br>/** end Facade Pattern */<br>";
 }
+
+function demoObserverPattern(): void
+{
+    echo "<br>/** start Observer Pattern */<br>";
+    $client = new ClientObserver();
+    $client->updatePrice();
+    echo "<br>/** end Observer Pattern */<br>";
+}
+
 echo "<br>Starting Design Patterns Demonstrations<br>";
 demoFactoryMethodPattern();
 demoAbstractFactoryPattern();
@@ -128,4 +138,5 @@ demoCompositePattern();
 demoDecoratorPattern();
 demoTemplateMethod();
 demoFacadePattern();
+demoObserverPattern();
 echo "<br>End of Design Patterns Demonstrations<br>";

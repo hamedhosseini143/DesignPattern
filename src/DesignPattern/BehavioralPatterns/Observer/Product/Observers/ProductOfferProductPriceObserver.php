@@ -2,10 +2,12 @@
 
 namespace src\DesignPattern\BehavioralPatterns\Observer\Product\Observers;
 
+use SplObserver;
 use SplSubject;
 
-class ProductOfferProductPriceObserver implements \SplObserver
+class ProductOfferProductPriceObserver implements SplObserver
 {
+
 
     /**
      * @param SplSubject $subject
@@ -13,6 +15,7 @@ class ProductOfferProductPriceObserver implements \SplObserver
      */
     public function update(SplSubject $subject): void
     {
-        echo "Product Offer: Product price has been changed to \n";
+        $newPrice = $subject->getPrice();
+        echo "Product Offer: Product price has been changed to $newPrice";
     }
 }

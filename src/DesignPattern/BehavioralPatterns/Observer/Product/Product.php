@@ -5,13 +5,29 @@ namespace src\DesignPattern\BehavioralPatterns\Observer\Product;
 use SplObjectStorage;
 use SplObserver;
 use SplSubject;
+use src\DesignPattern\BehavioralPatterns\Observer\Product\Observers\ProductOffer;
 use src\DesignPattern\BehavioralPatterns\Observer\Product\Observers\ProductOfferProductPriceObserver;
+
 
 class Product implements SplSubject
 {
-    private int $price;
+    /**
+     * @var int
+     */
+    protected int $price;
 
-    private $abserver;
+    /**
+     * @return int
+     */
+    public function getPrice(): int
+    {
+        return $this->price;
+    }
+
+    /**
+     * @var SplObjectStorage
+     */
+    private SplObjectStorage $observer;
 
     /**
      * @param $price
@@ -19,9 +35,14 @@ class Product implements SplSubject
     public function __construct($price)
     {
         $this->price = $price;
-        $this->abserver = new SplObjectStorage();
+        $this->observer = new SplObjectStorage();
 
     }
+
+    /**
+     * @param int $newPrice
+     * @return int
+     */
     public function changePrice(int $newPrice): int
     {
         $this->price = $newPrice;
@@ -35,7 +56,7 @@ class Product implements SplSubject
      */
     public function detach(SplObserver $observer): void
     {
-        $this->abserver->detach($observer);
+        $this->observer->detach($observer);
     }
 
     /**
@@ -43,14 +64,18 @@ class Product implements SplSubject
      */
     public function notify(): void
     {
-        foreach ($this->abserver as $observer) {
+        foreach ($this->observer as $observer) {
             $observer->update($this);
         }
     }
 
+    /**
+     * @return void
+     */
     public function attachPriceObserver(): void
     {
         $this->attach(new ProductOfferProductPriceObserver());
+        $this->attach(new ProductOffer());
     }
 
     /**
@@ -59,6 +84,7 @@ class Product implements SplSubject
      */
     public function attach(SplObserver $observer): void
     {
-        $this->abserver->attach($observer);
+        $this->observer->attach($observer);
     }
+
 }
