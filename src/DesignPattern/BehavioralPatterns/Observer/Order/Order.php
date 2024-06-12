@@ -9,16 +9,43 @@ use src\DesignPattern\BehavioralPatterns\Observer\Order\Observer\ProcessingObser
 
 class Order implements SplSubject
 {
+    /**
+     * @var int
+     */
     private const PENDING = 1;
+    /**
+     * @var int
+     */
     private const PROCESSING = 2;
+    /**
+     * @var int
+     */
     private const READY = 3;
+    /**
+     * @var int
+     */
     private const SENT = 4;
+    /**
+     * @var int
+     */
     private const DELIVERED = 5;
+    /**
+     * @var int
+     */
     private int $status;
+    /**
+     * @var int
+     */
     private int $price;
 
+    /**
+     * @var SplObjectStorage
+     */
     private SplObjectStorage $observers;
 
+    /**
+     * @param int $price
+     */
     public function __construct(int $price)
     {
         $this->price = $price;
@@ -35,6 +62,9 @@ class Order implements SplSubject
         $this->registerProcessioningObserver();
     }
 
+    /**
+     * @return void
+     */
     public function registerProcessioningObserver(): void
     {
         $this->attach(new ProcessingObserver());
@@ -49,6 +79,9 @@ class Order implements SplSubject
         $this->observers->attach($observer);
     }
 
+    /**
+     * @return void
+     */
     public function ready(): void
     {
         $this->status = self::READY;
@@ -56,6 +89,9 @@ class Order implements SplSubject
 
     }
 
+    /**
+     * @return void
+     */
     private function clearProcessioningObserver(): void
     {
         foreach ($this->observers as $observer) {
@@ -72,6 +108,10 @@ class Order implements SplSubject
         $this->observers->detach($observer);
     }
 
+    /**
+     * @param int $newPrice
+     * @return void
+     */
     public function changePrice(int $newPrice): void
     {
         $this->price = $newPrice;

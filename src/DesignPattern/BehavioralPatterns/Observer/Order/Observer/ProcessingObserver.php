@@ -12,6 +12,6 @@ class ProcessingObserver implements \SplObserver
      */
     public function update(SplSubject $subject): void
     {
-        // TODO: Implement update() method.
+            // TODO: Implement update() method.
     }
 }
