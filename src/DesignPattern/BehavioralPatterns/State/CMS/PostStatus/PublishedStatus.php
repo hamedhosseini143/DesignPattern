@@ -17,7 +17,7 @@ class PublishedStatus extends PostStatus
     /**
      * @return void
      */
-    public function modration(): void
+    public function moderation(): void
     {
         $this->post->transitioanTo(new ModrationStatus());
     }

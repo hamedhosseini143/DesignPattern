@@ -29,7 +29,7 @@ class Post
 
     public function modration(): void
     {
-        $this->status->modration();
+        $this->status->moderation();
     }
 
     public function draft(): void

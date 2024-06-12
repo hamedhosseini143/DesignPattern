@@ -4,15 +4,33 @@ namespace src\DesignPattern\BehavioralPatterns\State\CMS;
 
 abstract class PostStatus
 {
-    protected $post;
+    /**
+     * @var Post
+     */
+    protected Post $post;
 
+    /**
+     * @param Post $post
+     * @return void
+     */
     public function setPost(Post $post): void
     {
         $this->post = $post;
     }
 
+    /**
+     * @return void
+     */
     abstract public function draft(): void;
-    abstract public function modration(): void;
+
+    /**
+     * @return void
+     */
+    abstract public function moderation(): void;
+
+    /**
+     * @return void
+     */
     abstract public function published(): void;
 
 }

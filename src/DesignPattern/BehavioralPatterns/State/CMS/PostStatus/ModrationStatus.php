@@ -18,7 +18,7 @@ class ModrationStatus extends PostStatus
     /**
      * @return void
      */
-    public function modration(): void
+    public function moderation(): void
     {
         // TODO: Implement modration() method.
     }
