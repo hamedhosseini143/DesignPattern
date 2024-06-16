@@ -22,6 +22,7 @@ use src\DesignPattern\StructuralPatterns\Facade\OrderService\DiscountService;
 use src\DesignPattern\StructuralPatterns\Facade\OrderService\OrderServiceFacade;
 use src\DesignPattern\StructuralPatterns\Facade\OrderService\Product;
 use src\DesignPattern\StructuralPatterns\Facade\OrderService\QuantityService;
+use src\DesignPattern\StructuralPatterns\Flyweight\DiscountGenerator\DiscountFactory;
 
 /**
  * @return void
@@ -129,6 +130,17 @@ function demoObserverPattern(): void
     echo "<br>/** end Observer Pattern */<br>";
 }
 
+function demoFlyweightPattern(): void
+{
+    echo "<br>/** start Flyweight Pattern */<br>";
+
+    $discountFactory = new DiscountFactory();
+    $client = new \src\DesignPattern\StructuralPatterns\Flyweight\DiscountGenerator\Client($discountFactory);
+    $client->generateDiscounts();
+
+    echo "<br>/** end Flyweight Pattern */<br>";
+}
+
 echo "<br>Starting Design Patterns Demonstrations<br>";
 demoFactoryMethodPattern();
 demoAbstractFactoryPattern();
@@ -139,4 +151,5 @@ demoDecoratorPattern();
 demoTemplateMethod();
 demoFacadePattern();
 demoObserverPattern();
+demoFlyweightPattern();
 echo "<br>End of Design Patterns Demonstrations<br>";
