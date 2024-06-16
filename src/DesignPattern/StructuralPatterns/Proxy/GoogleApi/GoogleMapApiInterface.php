@@ -1,6 +1,6 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Proxy\GoogleApi;
+namespace src\DesignPattern\StructuralPatterns\Proxy\GoogleApi;
 
 interface GoogleMapApiInterface
 {

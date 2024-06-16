@@ -1,6 +1,6 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Proxy\CachRepository;
+namespace src\DesignPattern\StructuralPatterns\Proxy\CachRepository;
 
 interface ProductRepositoryInterface
 {

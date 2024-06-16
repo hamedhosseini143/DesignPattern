@@ -1,21 +1,17 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Proxy\GoogleApi;
+namespace src\DesignPattern\StructuralPatterns\Proxy\GoogleApi;
 
 use function app\DesignPattern\Proxy\GoogleApi\env;
 
 class GoogleMapProxy implements GoogleMapApiInterface
 {
 
-    /**
-     * @var \src\DesignPattern\StructuralPatterns \Proxy\GoogleApi\GoogleMapApiInterface
-     */
-    private \src\DesignPattern\StructuralPatterns \Proxy\GoogleApi\GoogleMapApiInterface $googleMapApi;
 
-    /**
-     * @param \src\DesignPattern\StructuralPatterns \Proxy\GoogleApi\GoogleMapApiInterface $googleMapApi
-     */
-    public function __construct(\src\DesignPattern\StructuralPatterns \Proxy\GoogleApi\GoogleMapApiInterface $googleMapApi)
+    private \src\DesignPattern\StructuralPatterns\Proxy\GoogleApi\GoogleMapApiInterface $googleMapApi;
+
+
+    public function __construct(\src\DesignPattern\StructuralPatterns\Proxy\GoogleApi\GoogleMapApiInterface $googleMapApi)
     {
         $this->googleMapApi = $googleMapApi;
     }

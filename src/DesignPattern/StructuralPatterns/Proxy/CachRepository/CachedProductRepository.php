@@ -1,19 +1,15 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Proxy\CachRepository;
+namespace src\DesignPattern\StructuralPatterns\Proxy\CachRepository;
 
-use Illuminate\Cache\Repository;
+
 
 class CachedProductRepository implements ProductRepositoryInterface
 {
-    private \src\DesignPattern\StructuralPatterns \Proxy\CachRepository\ProductRepositoryInterface $productRepository;
+    private ProductRepositoryInterface $productRepository;
     private Repository $cache;
 
-    /**
-     * @param \src\DesignPattern\StructuralPatterns \Proxy\CachRepository\ProductRepositoryInterface $productRepository
-     * @param Repository $cache
-     */
-    public function __construct(\src\DesignPattern\StructuralPatterns \Proxy\CachRepository\ProductRepositoryInterface $productRepository, Repository $cache)
+    public function __construct(ProductRepositoryInterface $productRepository, Repository $cache)
     {
         $this->productRepository = $productRepository;
         $this->cache = $cache;

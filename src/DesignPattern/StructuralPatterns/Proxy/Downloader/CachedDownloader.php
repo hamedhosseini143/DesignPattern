@@ -1,15 +1,15 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Proxy\Downloader;
+namespace src\DesignPattern\StructuralPatterns\Proxy\Downloader;
 
 class CachedDownloader implements Downloader
 {
-    private \src\DesignPattern\StructuralPatterns \Proxy\Downloader\Downloader $downloader;
+    private \src\DesignPattern\StructuralPatterns\Proxy\Downloader\Downloader $downloader;
 
     /**
      * @param \src\DesignPattern\StructuralPatterns \Proxy\Downloader\Downloader $downloader
      */
-    public function __construct(\src\DesignPattern\StructuralPatterns \Proxy\Downloader\Downloader $downloader)
+    public function __construct(\src\DesignPattern\StructuralPatterns\Proxy\Downloader\Downloader $downloader)
     {
         $this->downloader = $downloader;
     }

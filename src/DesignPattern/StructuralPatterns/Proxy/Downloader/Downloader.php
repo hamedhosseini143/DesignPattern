@@ -1,6 +1,6 @@
 <?php
 
-namespace src\DesignPattern\StructuralPatterns \Proxy\Downloader;
+namespace src\DesignPattern\StructuralPatterns\Proxy\Downloader;
 
 interface Downloader
 {
