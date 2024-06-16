@@ -2,7 +2,7 @@
 
 namespace src\DesignPattern\BehavioralPatterns\State\CMS\PostStatus;
 
-use src\DesignPattern\BehavioralPatterns\State\CMS\PostStatus;
+use src\DesignPattern\BeddehavioralPatterns\State\CMS\PostStatus;
 
 class PublishedStatus extends PostStatus
 {
