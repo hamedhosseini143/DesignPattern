@@ -12,11 +12,19 @@ class AccessVerifier
     /**
      * @param User $user
      * @param Product $product
-     * @return bool
+     * @return void
      */
-    public function verify(User $user, Product $product) : bool
+    public function verify(User $user, Product $product) : void
     {
-        return $this->buildVerificationChain()->verify($product, $user);
+        $verify =  $this->buildVerificationChain()->verify($product, $user);
+        if ($verify)
+        {
+            echo "User {$user->getUserName()} can access product {$product->getProductName()}";
+        }
+        else
+        {
+            echo "User {$user->getUserName()} can not access product {$product->getProductName()}";
+        }
     }
 
     /**

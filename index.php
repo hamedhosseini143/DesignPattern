@@ -2,6 +2,8 @@
 
 require 'vendor/autoload.php';
 
+use src\DesignPattern\BehavioralPatterns\ChainOfResponsibility\ProductAccess\AccessVerifier;
+use src\DesignPattern\BehavioralPatterns\ChainOfResponsibility\ProductAccess\User;
 use src\DesignPattern\BehavioralPatterns\Command\Tasks\ClientCommandPattern;
 use src\DesignPattern\BehavioralPatterns\Observer\Product\ClientObserver;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\DocumentGeneratorClient;
@@ -150,6 +152,19 @@ function demoSingletonPattern(): void
     echo "<br>/** end Singleton Pattern */<br>";
 }
 
+function demoChainOfResponsibilityPattern(): void
+{
+    echo "<br>/** start Chain Of Responsibility Pattern */<br>";
+    $user1 = new User(1, 'user1', true);
+    $user2 = new User(2, 'user2', false);
+    $product = new \src\DesignPattern\BehavioralPatterns\ChainOfResponsibility\ProductAccess\Product(1, 100, 'product1');
+    $accessVerifier = new AccessVerifier();
+    $accessVerifier->verify($user1, $product);
+    echo "<br>";
+    $accessVerifier->verify($user2, $product);
+    echo "<br>/** end Chain Of Responsibility Pattern */<br>";
+}
+
 echo "<br>Starting Design Patterns Demonstrations<br>";
 demoFactoryMethodPattern();
 demoAbstractFactoryPattern();
@@ -162,4 +177,5 @@ demoFacadePattern();
 demoObserverPattern();
 demoFlyweightPattern();
 demoSingletonPattern();
+demoChainOfResponsibilityPattern();
 echo "<br>End of Design Patterns Demonstrations<br>";

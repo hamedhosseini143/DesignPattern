@@ -10,6 +10,6 @@ class ClientSingleton
     public static function run() : void
     {
         $singleton = Singleton::getInstance();
-        $singleton->test();
+        $singleton->runTest();
     }
 }
