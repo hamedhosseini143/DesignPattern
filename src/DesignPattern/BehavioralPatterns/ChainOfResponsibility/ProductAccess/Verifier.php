@@ -2,10 +2,12 @@
 
 namespace src\DesignPattern\BehavioralPatterns\ChainOfResponsibility\ProductAccess;
 
-use App\Models\User;
 
 abstract class Verifier
 {
+    /**
+     * @var Verifier|null
+     */
     private Verifier|null $nextVerifier;
 
     /**
@@ -16,6 +18,11 @@ abstract class Verifier
         $this->nextVerifier = $nextVerifier;
     }
 
+    /**
+     * @param Product $product
+     * @param User $user
+     * @return bool
+     */
     public function verify(Product $product, User $user): bool
     {
         if (!$this->nextVerifier)
