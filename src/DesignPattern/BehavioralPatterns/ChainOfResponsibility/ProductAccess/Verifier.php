@@ -13,7 +13,7 @@ abstract class Verifier
     /**
      * @param Verifier|null $nextVerifier
      */
-    public function __construct(?Verifier $nextVerifier)
+    public function __construct(?Verifier $nextVerifier = null)
     {
         $this->nextVerifier = $nextVerifier;
     }

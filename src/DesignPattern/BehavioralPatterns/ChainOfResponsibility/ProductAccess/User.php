@@ -8,19 +8,35 @@ class User
      * @var int
      */
     private int $uid;
+
+    /**
+     * @return bool
+     */
+    public function isActive(): bool
+    {
+        return $this->active;
+    }
     /**
      * @var string
      */
     private string $userName;
 
     /**
+     * @var bool
+     */
+    private bool $active;
+
+
+    /**
      * @param int $uid
      * @param string $userName
+     * @param bool $active
      */
-    public function __construct(int $uid, string $userName)
+    public function __construct(int $uid, string $userName, bool $active)
     {
         $this->uid = $uid;
         $this->userName = $userName;
+        $this->active = $active;
     }
 
     /**
@@ -37,6 +53,14 @@ class User
     public function getUserName(): string
     {
         return $this->userName;
+    }
+
+    /**
+     * @return bool
+     */
+    public function getActive(): bool
+    {
+        return $this->active;
     }
 
 }
