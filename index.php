@@ -13,6 +13,7 @@ use src\DesignPattern\CreationalPatterns\AbstractFactory\FormBuilder\FormBuilder
 use src\DesignPattern\CreationalPatterns\Builder\RequestBuilder\ApiService;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Client;
 use src\DesignPattern\CreationalPatterns\FactoryMethod\PaymentMethod\Order;
+use src\DesignPattern\CreationalPatterns\Singleton\Example\ClientSingleton;
 use src\DesignPattern\StructuralPatterns\Composite\MenuBuilder\MenuBuilderClient;
 use src\DesignPattern\StructuralPatterns\Decorator\InvoicePrice\ClientDecoratorOverprice;
 use src\DesignPattern\StructuralPatterns\Decorator\ReportGenerator\ReportDecoratorClient;
@@ -141,6 +142,14 @@ function demoFlyweightPattern(): void
     echo "<br>/** end Flyweight Pattern */<br>";
 }
 
+function demoSingletonPattern(): void
+{
+    echo "<br>/** start Singleton Pattern */<br>";
+    $client = new ClientSingleton();
+    $client->run();
+    echo "<br>/** end Singleton Pattern */<br>";
+}
+
 echo "<br>Starting Design Patterns Demonstrations<br>";
 demoFactoryMethodPattern();
 demoAbstractFactoryPattern();
@@ -152,4 +161,5 @@ demoTemplateMethod();
 demoFacadePattern();
 demoObserverPattern();
 demoFlyweightPattern();
+demoSingletonPattern();
 echo "<br>End of Design Patterns Demonstrations<br>";
