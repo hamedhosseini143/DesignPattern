@@ -4,8 +4,14 @@ namespace src\DesignPattern\CreationalPatterns\Singleton\Example;
 
 class Singleton
 {
+    /**
+     * @var Singleton|null
+     */
     private static ?Singleton $instance = null;
 
+    /**
+     * Singleton constructor.
+     */
     private function __construct()
     {
     }
@@ -22,8 +28,11 @@ class Singleton
         return self::$instance;
     }
 
-    public function test(): void
+    /**
+     * @return void
+     */
+    public function runTest(): void
     {
-        echo 'Singleton test method called';
+        echo 'Singleton test method called <br>';
     }
 }
