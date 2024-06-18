@@ -6,6 +6,7 @@ use src\DesignPattern\BehavioralPatterns\ChainOfResponsibility\ProductAccess\Acc
 use src\DesignPattern\BehavioralPatterns\ChainOfResponsibility\ProductAccess\User;
 use src\DesignPattern\BehavioralPatterns\Command\Tasks\ClientCommandPattern;
 use src\DesignPattern\BehavioralPatterns\Observer\Product\ClientObserver;
+use src\DesignPattern\BehavioralPatterns\Strategy\Payment\StrategyClientPaymentMethod;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\DocumentGeneratorClient;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\UserData;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\UserReportToCsv;
@@ -174,6 +175,14 @@ function demoAdapterPattern(): void
     echo "<br>/** end Adapter Pattern */<br>";
 }
 
+function demoStrategyPattern(): void
+{
+    echo "<br>/** start Strategy Pattern */<br>";
+    $strategyClientPaymentMethod = new StrategyClientPaymentMethod('online');
+    $strategyClientPaymentMethod->startPay();
+    echo "<br>/** end Strategy Pattern */<br>";
+}
+
 echo "<br>Starting Design Patterns Demonstrations<br>";
 demoFactoryMethodPattern();
 demoAbstractFactoryPattern();
@@ -188,4 +197,5 @@ demoFlyweightPattern();
 demoSingletonPattern();
 demoChainOfResponsibilityPattern();
 demoAdapterPattern();
+demoStrategyPattern();
 echo "<br>End of Design Patterns Demonstrations<br>";
