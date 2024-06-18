@@ -4,8 +4,7 @@ namespace src\DesignPattern\BehavioralPatterns\Strategy\Delivery;
 
 use src\DesignPattern\BehavioralPatterns\Strategy\Payment\Order;
 
-
-class DeliveryServiceContext
+class ClientDeleveryStrategy
 {
     /**
      * @var DeliveryMethodInterface
@@ -24,9 +23,10 @@ class DeliveryServiceContext
      * @param Order $order
      * @return void
      */
-    public function startDelivery(Order $order): void
+    public function checkPay(Order $order): void
     {
-        $this->deliveryMethod->price($order);
-        $this->deliveryMethod->deliver($order);
+        $deliveryMethod = new DeliveryServiceContext($this->deliveryMethod);
+        $deliveryMethod->startDelivery($order);
     }
+
 }

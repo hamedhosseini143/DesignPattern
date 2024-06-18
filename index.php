@@ -6,6 +6,8 @@ use src\DesignPattern\BehavioralPatterns\ChainOfResponsibility\ProductAccess\Acc
 use src\DesignPattern\BehavioralPatterns\ChainOfResponsibility\ProductAccess\User;
 use src\DesignPattern\BehavioralPatterns\Command\Tasks\ClientCommandPattern;
 use src\DesignPattern\BehavioralPatterns\Observer\Product\ClientObserver;
+use src\DesignPattern\BehavioralPatterns\Strategy\Delivery\ClientDeleveryStrategy;
+use src\DesignPattern\BehavioralPatterns\Strategy\Delivery\DeliveryMethod\ExpressMethodDelivery;
 use src\DesignPattern\BehavioralPatterns\Strategy\Payment\StrategyClientPaymentMethod;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\DocumentGeneratorClient;
 use src\DesignPattern\BehavioralPatterns\TemplateMethod\DocumentGenerator\UserData;
@@ -180,6 +182,10 @@ function demoStrategyPattern(): void
     echo "<br>/** start Strategy Pattern */<br>";
     $strategyClientPaymentMethod = new StrategyClientPaymentMethod('online');
     $strategyClientPaymentMethod->startPay();
+    echo "<br>";
+    $order = new \src\DesignPattern\BehavioralPatterns\Strategy\Payment\Order(100);
+    $strategyClientPaymentMethod = new ClientDeleveryStrategy(new ExpressMethodDelivery());
+    $strategyClientPaymentMethod->checkPay($order);
     echo "<br>/** end Strategy Pattern */<br>";
 }
 

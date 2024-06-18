@@ -2,27 +2,31 @@
 
 namespace src\DesignPattern\BehavioralPatterns\Strategy\Delivery\DeliveryMethod;
 
-use src\DesignPattern\BehavioralPatterns\Strategy\Delivery\DeliveryMethod;
+use src\DesignPattern\BehavioralPatterns\Strategy\Delivery\DeliveryMethodInterface;
 use src\DesignPattern\BehavioralPatterns\Strategy\Payment\Order;
 
-class NormalMethodDelivery implements DeliveryMethod
+class NormalMethodDelivery implements DeliveryMethodInterface
 {
+    private const DELIVERY_COST = 5;
+
+    private int $finalPrice;
 
     /**
      * @param Order $order
-     * @return mixed
+     * @return int
      */
-    public function price(Order $order)
+    public function price(Order $order) : int
     {
-        // TODO: Implement price() method.
+        $this->finalPrice = $order->getPrice() + self::DELIVERY_COST;
+        return $this->finalPrice;
     }
 
     /**
      * @param Order $order
-     * @return mixed
+     * @return void
      */
-    public function deliver(Order $order)
+    public function deliver(Order $order) : void
     {
-        // TODO: Implement deliver() method.
+       echo "Delivering order by Normal Method Delivery with final price of {$this->finalPrice}";
     }
 }
