@@ -1,10 +1,10 @@
 <?php
 
-namespace Adapter\PaymentProvider;
+namespace src\DesignPattern\StructuralPatterns\Adapter\PaymentProvider;
 
 class Invoice
 {
-    private $amount;
+    private int $amount;
 
     /**
      * @param int $amount
@@ -19,7 +19,7 @@ class Invoice
      */
     public function amount(): int
     {
-        if ($this->amount < 0) {
+        if ($this->amount <= 0) {
             throw new \InvalidArgumentException('Invalid amount');
         }
         return $this->amount;
