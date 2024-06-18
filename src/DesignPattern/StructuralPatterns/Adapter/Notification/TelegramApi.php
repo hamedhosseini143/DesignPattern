@@ -1,11 +1,16 @@
 <?php
 
-namespace Adapter\Notification;
+namespace src\DesignPattern\StructuralPatterns\Adapter\Notification;
 
 class TelegramApi
 {
-    public function send(int $chatId, string $message)
+    /**
+     * @param int $chatId
+     * @param string $message
+     * @return void
+     */
+    public function send(int $chatId, string $message): void
     {
-        // api telegram
+       echo "Telegram: $message";
     }
 }

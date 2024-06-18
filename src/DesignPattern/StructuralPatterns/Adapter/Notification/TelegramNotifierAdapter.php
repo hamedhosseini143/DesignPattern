@@ -1,8 +1,8 @@
 <?php
 
-namespace Adapter\Notification;
+namespace src\DesignPattern\StructuralPatterns\Adapter\Notification;
 
-class TelegramNotifierAdapter implements Notifier
+class TelegramNotifierAdapter implements NotifierInterface
 {
     private TelegramApi $telegramApi;
     private int $chatId;
@@ -15,9 +15,9 @@ class TelegramNotifierAdapter implements Notifier
 
     /**
      * @param string $message
-     * @return mixed
+     * @return void
      */
-    public function send(string $message)
+    public function send(string $message): void
     {
         $this->telegramApi->send($this->chatId, $message);
     }

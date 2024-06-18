@@ -1,16 +1,17 @@
 <?php
 
-namespace Adapter\Notification;
+namespace src\DesignPattern\StructuralPatterns\Adapter\Notification;
 
-class EmailNotifier implements Notifier
+class EmailNotifier implements NotifierInterface
 {
+
 
     /**
      * @param string $message
-     * @return mixed
+     * @return void
      */
-    public function send(string $message)
+    public function send(string $message): void
     {
-        // TODO: Implement send() method.
+        echo "Email notification: " . $message;
     }
 }
