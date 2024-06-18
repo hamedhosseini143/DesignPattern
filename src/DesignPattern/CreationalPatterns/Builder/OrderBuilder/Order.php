@@ -4,78 +4,77 @@ namespace src\DesignPattern\CreationalPatterns\Builder\OrderBuilder;
 
 class Order
 {
-    private $customer;
-    private $totalPrice;
-    private $finalPrice;
-    private $deliveryAddress;
-    private $orderLines;
-    private $status;
+    private int $customerId;
+    private int $totalPrice;
+    private int $finalPrice;
+    private string $deliveryAddress;
+    private int $orderLines;
+    private bool $status;
 
     /**
-     * @param $totalPrice
-     * @param $finalPrice
-     * @param $deliveryAddress
-     * @param $orderLines
-     * @param $status
-     * @param $customer
+     * @param int $customerId
+     * @param string $deliveryAddress
+     * @param int $finalPrice
+     * @param int $orderLines
+     * @param bool $status
+     * @param int $totalPrice
      */
-    public function __construct($customer, $totalPrice, $finalPrice, $deliveryAddress, $orderLines, $status)
+    public function __construct(int $customerId, string $deliveryAddress, int $finalPrice, int $orderLines, bool $status, int $totalPrice)
     {
-        $this->customer = $customer;
-        $this->totalPrice = $totalPrice;
-        $this->finalPrice = $finalPrice;
+        $this->customerId = $customerId;
         $this->deliveryAddress = $deliveryAddress;
+        $this->finalPrice = $finalPrice;
         $this->orderLines = $orderLines;
         $this->status = $status;
+        $this->totalPrice = $totalPrice;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getCustomer()
+    public function getCustomerId(): int
     {
-        return $this->customer;
+        return $this->customerId;
     }
 
     /**
-     * @return mixed
+     * @return string
      */
-    public function getTotalPrice()
-    {
-        return $this->totalPrice;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getFinalPrice()
-    {
-        return $this->finalPrice;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDeliveryAddress()
+    public function getDeliveryAddress(): string
     {
         return $this->deliveryAddress;
     }
 
     /**
-     * @return mixed
+     * @return int
      */
-    public function getOrderLines()
+    public function getFinalPrice(): int
+    {
+        return $this->finalPrice;
+    }
+
+    /**
+     * @return int
+     */
+    public function getOrderLines(): int
     {
         return $this->orderLines;
     }
 
     /**
-     * @return mixed
+     * @return bool
      */
-    public function getStatus()
+    public function getStatus(): bool
     {
         return $this->status;
     }
 
+    /**
+     * @return int
+     */
+    public function getTotalPrice(): int
+    {
+        return $this->totalPrice;
+    }
 
 }
